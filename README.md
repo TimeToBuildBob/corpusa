@@ -56,6 +56,7 @@ Make sure you have access to a good LLM provider:
 ### Step 1: Prepare Your Papers
 Organize your 300 papers in a single directory:
 
+```txt
 papers/
 ├── paper1.pdf
 ├── paper2.pdf
@@ -63,6 +64,7 @@ papers/
 │   ├── paper3.pdf
 │   └── paper4.txt
 └── ...
+```
 
 **Supported formats:**
 - PDF files (`.pdf`)
@@ -157,6 +159,7 @@ python corpus_visualizer.py results_directory -o visualizations
 
 ### Directory Structure
 
+```txt
 results_directory/
 ├── corpus_summary.json          # Overall statistics and processing info
 ├── corpus_report.md            # Human-readable markdown report
@@ -178,6 +181,7 @@ visualizations/
 ├── corpus_data.csv           # Raw data export
 ├── corpus_analysis.xlsx      # Excel workbook with summaries
 └── network_stats.json        # Network analysis statistics
+```
 
 ### Key Files Explained
 
