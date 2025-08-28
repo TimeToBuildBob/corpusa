@@ -1,0 +1,81 @@
+{
+  "paper_analysis_schema": {
+    "type": "object",
+    "properties": {
+      "metadata": {
+        "type": "object",
+        "properties": {
+          "title": {"type": "string"},
+          "authors": {"type": "array", "items": {"type": "string"}},
+          "publication_year": {"type": "integer"},
+          "venue": {"type": "string"},
+          "doi": {"type": "string"},
+          "abstract": {"type": "string"}
+        },
+        "required": ["title"]
+      },
+      "content_analysis": {
+        "type": "object",
+        "properties": {
+          "main_topic": {"type": "string"},
+          "research_domain": {"type": "string"},
+          "sub_domains": {"type": "array", "items": {"type": "string"}},
+          "research_questions": {"type": "array", "items": {"type": "string"}},
+          "study_objectives": {"type": "array", "items": {"type": "string"}}
+        }
+      },
+      "methodology": {
+        "type": "object",
+        "properties": {
+          "research_type": {"type": "string", "enum": ["experimental", "theoretical", "survey", "case_study", "systematic_review", "meta_analysis", "mixed_methods"]},
+          "techniques_used": {"type": "array", "items": {"type": "string"}},
+          "tools_software": {"type": "array", "items": {"type": "string"}},
+          "datasets": {"type": "array", "items": {"type": "string"}},
+          "sample_size": {"type": "integer"},
+          "data_collection_methods": {"type": "array", "items": {"type": "string"}}
+        }
+      },
+      "innovations": {
+        "type": "object",
+        "properties": {
+          "novel_contributions": {"type": "array", "items": {"type": "string"}},
+          "innovations_claimed": {"type": "array", "items": {"type": "string"}},
+          "novelty_level": {"type": "string", "enum": ["incremental", "substantial", "breakthrough", "unclear"]},
+          "practical_applications": {"type": "array", "items": {"type": "string"}}
+        }
+      },
+      "technical_details": {
+        "type": "object",
+        "properties": {
+          "algorithms": {"type": "array", "items": {"type": "string"}},
+          "models": {"type": "array", "items": {"type": "string"}},
+          "frameworks": {"type": "array", "items": {"type": "string"}},
+          "programming_languages": {"type": "array", "items": {"type": "string"}},
+          "evaluation_metrics": {"type": "array", "items": {"type": "string"}}
+        }
+      },
+      "findings": {
+        "type": "object",
+        "properties": {
+          "key_results": {"type": "array", "items": {"type": "string"}},
+          "performance_improvements": {"type": "array", "items": {"type": "string"}},
+          "limitations": {"type": "array", "items": {"type": "string"}},
+          "future_work": {"type": "array", "items": {"type": "string"}}
+        }
+      },
+      "keywords": {
+        "type": "array",
+        "items": {"type": "string"}
+      },
+      "relevance_scores": {
+        "type": "object",
+        "properties": {
+          "innovation_score": {"type": "integer", "minimum": 1, "maximum": 5},
+          "technical_complexity": {"type": "integer", "minimum": 1, "maximum": 5},
+          "practical_impact": {"type": "integer", "minimum": 1, "maximum": 5}
+        }
+      }
+    },
+    "required": ["metadata", "content_analysis", "keywords"]
+  }
+}
